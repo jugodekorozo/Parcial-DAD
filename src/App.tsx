@@ -190,8 +190,8 @@ function App() {
                       Formato
                     </p>
                     <p className="mt-3 text-sm leading-6 text-haze">
-                      PDF compilado o carpeta organizada, listo para presentar a
-                      un cliente, productor o jurado.
+                      Presentacion (slides), listo para presentar a un cliente,
+                      productor o jurado.
                     </p>
                   </div>
                 </div>
