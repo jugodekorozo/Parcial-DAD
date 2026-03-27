@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400&family=Poppins:wght@700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  font-family: "Lora", ui-serif, Georgia, serif;
+  --color-primary: 95 204 40;
+  --color-secondary: 179 231 110;
+  --color-tertiary: 61 127 52;
+  --color-neutral: 245 251 213;
+  --color-black: 48 26 71;
+  --color-ink: 48 26 71;
+  --color-surface: 245 251 213;
+  --color-paper: 179 231 110;
+  --color-tint: 95 204 40;
+  background: rgb(var(--color-surface));
+}
+
+:root.dark {
+  color-scheme: dark;
+  --color-ink: 245 251 213;
+  --color-surface: 48 26 71;
+  --color-paper: 61 127 52;
+  --color-tint: 95 204 40;
+  background: rgb(var(--color-black));
+}
+
+html {
+  scroll-behavior: smooth;
+  background: rgb(var(--color-surface));
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: rgb(var(--color-surface));
+  color: rgb(var(--color-ink));
+  font-family: "Lora", ui-serif, Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@media print {
+  :root,
+  :root.dark {
+    color-scheme: light;
+    background: rgb(var(--color-neutral));
+  }
+
+  body {
+    background: rgb(var(--color-neutral)) !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  main {
+    padding-left: 0 !important;
+  }
+
+  section,
+  article,
+  div {
+    break-inside: avoid;
+  }
+
+  a[href^="#"]::after {
+    content: "";
+  }
+}
